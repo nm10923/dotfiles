@@ -8,5 +8,5 @@ Includes: dwm-6.2, dmenu, st, picom config file, and my wallpaper
 - scrollback
 - scrollback-mouse
 
-dwm, dmenu, and st were created by Suckless Software: <https://suckless.org>
+dwm, dmenu, and st were created by Suckless Software: <https://suckless.org>.
 the picom fork I use was created by ibhagwan: <https://github.com/ibhagwan>
