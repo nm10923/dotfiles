@@ -4,8 +4,13 @@
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 10;
 static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayspacing = 2;   /* systray spacing */
+static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+static const int user_bh	    = 22;
 static const int vertpad	    = 5;
 static const int sidepad	    = 10;
 static const char *fonts[]          = { "monospace:size=15", "fontawesome:size=15", };
@@ -66,6 +71,7 @@ static const char *screenshot[] = {"import", "-window", "root", "~/Pictures/Scre
 static const char *volup[] = {"volctrl", "up", NULL};
 static const char *voldown[] = {"volctrl", "down", NULL};
 static const char *killdwm[] = {"killall", "dwm-exec", NULL};
+static const char *selscreenshot = {"flameshot", "gui", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
