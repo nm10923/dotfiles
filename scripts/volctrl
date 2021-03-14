@@ -1,0 +1,10 @@
+#!/bin/bash
+
+VOL="${2:-5}"
+
+case "$1" in
+	mute) pulsemixer --toggle-mute ;;
+	up) pulsemixer --change-volume +"$VOL" ;;
+	down) pulsemixer  --change-volume -"$VOL" ;;
+	view) pulsemixer --get-volume
+esac

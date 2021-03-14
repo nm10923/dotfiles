@@ -1,0 +1,17 @@
+#!/bin/bash
+
+BAT=$(acpi -b | grep -E -o '[0-9][0-9]?%')
+CHARGE="Battery: "
+# Full and short texts
+#echo " Battery: $BAT""
+# Set urgent flag below 5% or use orange below 20%
+[ ${BAT%?} -le 5 ] && echo " CHARGE ASAP: $BAT"
+[ ${BAT%?} -le 1 ] && echo " RIP: $BAT"
+[ ${BAT%?} -le 25 ] && echo -e " $CHARGE $BAT"
+[ ${BAT%?} -le 50 ] && echo -e " $CHARGE $BAT"
+[ ${BAT%?} -le 75 ] && echo -e " $CHARGE $BAT"
+[ ${BAT%?} -le 100 ] && echo -e " $CHARGE $BAT"
+case $BLOCK_BUTTON in
+	1) notify-send BATTIME "Time Remaining : $acpi | awk '{print $5} '" ;;
+esac
+exit 0
